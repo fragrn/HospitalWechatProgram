@@ -1,0 +1,5 @@
+<!--pages/register_record/register_record.wxml-->  
+<view class="auto">
+    <image style="width:100%;height:100%;" mode='aspectFill' src="../../images/健康讲座.png"></image>
+</view>
+

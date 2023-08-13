@@ -1,0 +1,389 @@
+<!--index.wxml-->
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="search flex-wrp">
+      <view class="search-left flex-item">
+          <image src="../../images/search.png"></image>
+          <input placeholder="搜索话题, 问题或人" placeholder-class="search-placeholder"/>
+      </view>
+      <view class="search-right flex-item" bindtap="upper">
+          <image src="../../images/lighting.png"></image>
+      </view>
+  </view>
+  
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon10.jpg"></image>
+                    </view>
+                    <text>归去赞了回答1</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                 <view class="question" qid="{{question_id}}" bindtap="bindQueTap"> 
+                  
+                    <a class="question-link">
+                        <text>各位uu要午睡吗？一般午睡个多久啊？到底午睡多久比较合适呢？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer1Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">这个因人而异吧，我的话一般午睡20分钟的样子，毕竟下午一点有课所以也睡不了多久。有些人有个误解，认为午睡时间越长，醒来越有精神，但其实如果你睡久了起来反而会很困，这里面是有科学依据的，我们睡觉有一个睡眠周期，整个过程大约 90～120 分钟...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>112 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon2.jpg"></image>
+                    </view>
+                    <text>Alex赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>本人一只程序猿，常年坐在凳上，最近腰好酸啊，好难受，怎么办？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer2Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">啊我也是只腰疼的程序员，这个腰疼的话主要原因就是长时间保持一个姿势不动。所以首先最简单的方法就是坐40分钟一定要起来走一走！！！不管你的程序还有多少个bug没补上，一定到了40分钟就要起来走一走！bug是修不完的，身体没了就什么都没了...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>100 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>5 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon3.jpg"></image>
+                    </view>
+                    <text>豆豆赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>家人们都用什么牌子的祛痘洗面奶啊？最近脸上的痘痘一直不消好烦人啊</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer3Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">作为一个尝试过很多款洗面奶的老手，首先我先来科普下挑选洗面奶的几个重点：
+                        1.清洁用品不需诉求美白、抗老或其他功能，只诉求"清洁"。
+                        这是因为洗面乳最后都是要洗掉，就算产品真的添加了其他功能性成分，在脸上停留时间根本来不及作用就被洗掉，白花钱买这些成分而已...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>112 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon4.jpg"></image>
+                    </view>
+                    <text>波奇酱赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>期末周来了，好多要复习的啊，睡不着觉怎么办啊？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer4Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">这个不要想太多，不要因为睡不着而去想我为什么睡不着之类的事情。给自己积极的心理暗示，不要太过于纠结考试焦虑，睡不着的时候躺下闭上眼睛，把大脑放空，手机调成[勿扰模式]，想一下对未来的规划或者想一些自己向往的东西，可以帮助你做一个好梦...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>190 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>2 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon5.jpg"></image>
+                    </view>
+                    <text>优一赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>最近压力大，肠胃一直不舒服，这是为什么？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer5Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">长期处于高压力状态会导致身体分泌大量的压力激素，如皮质醇和肾上腺素等，这些激素会影响身体的多个系统，包括肠胃系统。具体而言，长期的压力会导致肠胃运动失调，增加胃酸分泌，引起胃酸逆流，从而导致胃酸对食道和胃黏膜的刺激，引起不适和疼痛感...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>11 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon6.jpg"></image>
+                    </view>
+                    <text>小独赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>最近头发好油啊，我的洗发水洗了好几遍还是很油，有没有什么女士去油洗发水安利啊？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer6Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">本人大三，女，内分泌极为旺盛，头发整天都像上了发胶一样，然后用过了很多款去油洗发水，最后有几款可以安利一下。
+                        【实力控油、强韧易断发质】lzq咖啡洗发水...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>18 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon7.jpg"></image>
+                    </view>
+                    <text>归去来兮赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>感冒了，打喷嚏，流鼻涕，该吃什么药啊？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer7Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">轻微感冒的话就常见感冒药吧，常见的感冒药可以缓解感冒症状，例如感冒灵、复方感冒灵等，可以缓解多种感冒症状，如打喷嚏、流鼻涕、喉咙痛等。
+                        除了使用药物外，还可以通过以下方法来缓解感冒症状：
+                        1. 保持充足的休息和睡眠...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>129 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon8.jpg"></image>
+                    </view>
+                    <text>沙丁鱼赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>最近眼睛好干啊，该注意些什么呢？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer8Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">长时间盯着电脑屏幕会导致眼睛疲劳和干涩不适感。以下是一些可能有帮助的建议：
+
+1. 经常眨眼：长时间凝视电脑屏幕时，往往会减少眨眼的频率，建议每隔20分钟或30分钟，用意识地眨眼几次，可以有效地帮助保持眼睛湿润，缓解眼部疲劳。
+2. 远离屏幕：长时间注视电脑屏幕也会使眼睛疲劳，建议每隔一小时，离开电脑屏幕，看看窗外或者其他远处的物体，放松眼睛...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>112 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon9.jpeg"></image>
+                    </view>
+                    <text>周旋赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>友友们一天中每顿饭大概摄入多少热量才比较能保持一个健康的身材呢？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer9Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">每个人的身体状况和活动水平不同，所需的热量摄入也会有所不同。一般来说，一个健康的成年人每天需要摄入大约2000-2500卡路里的热量，以维持身体正常的代谢和活动。
+
+根据个人饮食习惯和生活习惯的不同，每餐应该摄入多少热量也会有所差异。通常来说，建议每餐摄入约400-600卡路里的热量为宜，三餐加上适量的小食可以保证足够的营养和能量供应...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>50 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block>
+        <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="../../images/icon10.jpg"></image>
+                    </view>
+                    <text>归去赞了回答</text>
+                </a>
+                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" >
+                    <a class="question-link">
+                        <text>怎么最近越长越胖啊...家人们都怎么保持健康身材的啊？</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindAnswer10Tap">
+                        <text class="answer-txt" aid="{{answer_id}}">1. 合理饮食：保持均衡饮食是保持健康身材的重要因素。建议您避免高糖、高脂、高盐、高热量的食物，增加蔬菜、水果、全谷物、蛋白质和健康脂肪的摄入。
+2. 运动：每周至少进行150分钟的有氧运动，如快步走、跑步、游泳、跳舞等，有助于增强心肺功能、消耗热量和保持身材。
+3. 控制饮酒：过量饮酒会导致卡路里摄入过量，增加体重，建议适量饮酒或戒酒...</text>
+                    </view>
+                    <view class="answer-actions" bindtap="bindItemTap">
+                        <view class="like dot">
+                            <a>112 赞同 </a>
+                        </view>
+                        <view class="comments dot">
+                            <a>8 评论 </a>
+                        </view>
+                        <view class="follow-it">
+                            <a>关注问题</a>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+

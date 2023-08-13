@@ -1,0 +1,107 @@
+<!--answer.wxml-->
+<view class="container">
+    
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
+
+
+<view class="container"data-idx="2">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">感冒了，打喷嚏，流鼻涕，该吃什么药啊？</text>
+    </view>
+    <view class="answerer-wrp">
+        <view class="bg-half"></view>
+        <view class="answerer flex-wrp">
+            <view class="avatar flex-item">
+                <image src="../../images/icon7.jpg"></image>
+            </view>
+            <view class="answerer-info flex-item">
+                <text class="answerer-name">归去来兮</text>
+                <text class="answerer-des"></text> 
+            </view>
+            <view class="follow flex-item">
+                <text>十 关注</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-content">
+        <text>轻微感冒的话就常见感冒药吧，常见的感冒药可以缓解感冒症状，例如感冒灵、复方感冒灵等，可以缓解多种感冒症状，如打喷嚏、流鼻涕、喉咙痛等。
+
+除了使用药物外，还可以通过以下方法来缓解感冒症状：
+
+1. 保持充足的休息和睡眠。
+2. 喝足够的水，以帮助保持身体水分。
+
+需要注意的是，如果您的症状持续或加重，或出现呼吸急促、胸闷等严重症状，建议立即就医或咨询医生。
+
+
+        </text>
+        
+    </view>
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+

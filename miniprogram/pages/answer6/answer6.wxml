@@ -1,0 +1,122 @@
+<!--answer.wxml-->
+<view class="container">
+    
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
+
+
+<view class="container"data-idx="2">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">家人们都用什么牌子的祛痘洗面奶啊？最近脸上的痘痘一直不消好烦人啊</text>
+    </view>
+    <view class="answerer-wrp">
+        <view class="bg-half"></view>
+        <view class="answerer flex-wrp">
+            <view class="avatar flex-item">
+                <image src="../../images/icon6.jpg"></image>
+            </view>
+            <view class="answerer-info flex-item">
+                <text class="answerer-name">小独</text>
+                <text class="answerer-des"></text> 
+            </view>
+            <view class="follow flex-item">
+                <text>十 关注</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-content">
+        <text>最近头发好油啊，我的洗发水洗了好几遍还是很油，有没有什么女士去油洗发水安利啊？
+        </text>
+        <image src="../../images/去油.png"></image>
+        <text>
+          **主要成分：**双酸（水杨酸+果酸）、德国Octopirox抑屑因子、咖啡提取物
+
+**质地：**透明的啫喱质地，流动性一般
+
+**起泡**：用手轻轻揉搓就会产生丰盈细腻的泡沫，味道也是有点小清新的感觉，是我喜欢的style
+
+**使用感受：**这款洗发水最近在短视频还是挺火的，之所以要测它，是因为同事一直在用，说是控油固发效果挺好的，我一听就来了兴趣，还能有我用的好？
+
+**测完之后，给我最大的感觉就是，清洁力相当不错！作为一个大油田，真有种毛囊被疏通的感觉，**它是那种洗完后，能明显感觉把头皮上的油脂以及废旧角质都吸附走了。
+
+**有种“拨开云雾”的感觉，反正我第一次用的时候是觉得自己以前的头都白洗了！**
+        </text>
+        <image src="../../images/对比.png"></image>
+        <test>
+          但你要是睡个 40～60 分钟，
+          睡得正酣的时候被叫醒，此时的大脑正处于深睡眠阶段，起来时反而会更困。
+
+
+
+
+
+
+        </test>
+    </view>
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+

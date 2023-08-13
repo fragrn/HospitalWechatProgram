@@ -1,0 +1,105 @@
+<!--answer.wxml-->
+<view class="container">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">本人一只程序猿，常年坐在凳上，最近腰好酸啊，好难受，怎么办？</text>
+    </view>
+    <view class="answerer-wrp">
+        <view class="bg-half"></view>
+        <view class="answerer flex-wrp">
+            <view class="avatar flex-item">
+                <image src="../../images/icon2.jpg"></image>
+            </view>
+            <view class="answerer-info flex-item">
+                <text class="answerer-name">Alex</text>
+                <text class="answerer-des"></text>
+            </view>
+            <view class="follow flex-item">
+                <text>十 关注</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-content">
+        <text>啊我也是只腰疼的程序员，这个腰疼的话主要原因就是长时间保持一个姿势不动。
+
+所以首先最简单的方法就是坐40分钟一定要起来走一走！！！不管你的程序还有多少个bug没补上，一定到了40分钟就要起来走一走！bug是修不完的，身体没了就什么都没了，得不偿失。
+
+其次可以做一些活动到腰部肌肉的活动，比如自由泳与飞燕式运动，都是行之有效的好方法。
+
+当然如果你的腰疼真的很痛，而且持续很久的话，要尽早去医院看医生！
+        </text>
+        
+    </view>
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
+
+
+<view class="container"data-idx="2">
+    
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+

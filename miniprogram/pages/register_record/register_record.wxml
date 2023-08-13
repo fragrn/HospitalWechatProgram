@@ -1,0 +1,4 @@
+<!--pages/register_record/register_record.wxml-->  
+<view class='img'>
+  <image src="../../images/挂号记录演示.jpg" mode="widthFix"></image>
+</view>

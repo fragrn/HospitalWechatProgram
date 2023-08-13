@@ -1,0 +1,144 @@
+<!--answer.wxml-->
+<view class="container">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">家人们都用什么牌子的祛痘洗面奶啊？最近脸上的痘痘一直不消好烦人啊</text>
+    </view>
+    <view class="answerer-wrp">
+        <view class="bg-half"></view>
+        <view class="answerer flex-wrp">
+            <view class="avatar flex-item">
+                <image src="../../images/icon3.jpg"></image>
+            </view>
+            <view class="answerer-info flex-item">
+                <text class="answerer-name">豆豆</text>
+                <text class="answerer-des"></text>
+            </view>
+            <view class="follow flex-item">
+                <text>十 关注</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-content">
+        <text>作为一个尝试过很多款洗面奶的老手，首先我先来科普下挑选洗面奶的几个重点：
+
+> **1.清洁用品不需诉求美白、抗老或其他功能，只诉求"清洁"。**
+
+这是因为洗面乳最后都是要洗掉，就算产品真的添加了其他功能性成分，在脸上停留时间根本来不及作用就被洗掉，白花钱买这些成分而已。所以不用幻想脸会越洗越白、越洗越年轻之类，如果洗完真的比较白，那是去角质的作用。
+
+> **2.能起到清洁作用的成分叫 "表面活性剂"，而不是 "泡泡"**
+
+「泡泡越绵密就洗得越乾淨」是一个极为常见的误解！因为广告词都这麽标榜！实际上泡泡在清洁过程中起到的作用仅仅是帮助葬污漂浮而已，而真正清洁的作用是因为表面活性剂，他们融解在水中可以降低液体的表面张力，或是两相之间的介面张力，也就是说在洗脸的过程中可以降低污垢在皮肤上的附著度，从而将葬污油垢移除，而泡泡在真正清洁这个功能上扮演的脚色其实不大。
+
+也就是说清洁脸部真正要探讨的东西并不是这个产品呈现出来的表象，譬如质地或是泡泡多寡，而是它「使用了哪些表面活性剂」。但是不可否认，泡泡更多的洗面奶使用感的确更好。
+
+> **3.粉刺油痘人确实需要去角质的产品**
+
+注意，去角质只能把脸洗乾淨，但不能过度清洁，去角质的频率每月2-3次就够了
+
+> **4.痘痘肌一定要避免使用刺激性强的表活的洁面乳。例如下面这些表活（看见这些表活的洁面乳，你就自觉扔了吧）**
+
+**a. SLS，SLES的表活**
+
+**b.皂基表活**
+
+**进入重点，那什么洗面奶是可以使用的?**
+
+温和清洁选用**氨基酸系、椰油酰羟乙黄酸脂钠、葡萄糖甘系列、甜菜硷**系列表面活性剂的洗面乳，像葡糖甘类型、甜菜硷就是取材于自然的成分，是比较温和的，但一般不会单独使用，会和其他表活结合。
+
+然后我推荐一下这款洗面奶
+
+> [elta MD氨基酸洁面乳]
+
+表活：椰油酰甘氨酸钠（sodium cocoyl glycinate）
+
+参考价格：135rmb /207ml
+        </text>
+        <image src="../../images/洗发水.jpg"></image>
+        <text>
+          一款也非常红的氨基酸洁面乳，主要的清洁剂是两种氨基酸类型的表面活性剂，与皮肤的相容性很好，洗得干净，但不紧绷。泡泡真的很厚实！终于理解为什么之前好多人说fp的泡泡虚了，真的只有在用过之后才能懂这种感觉。其次，味道比fp好闻多了，是淡淡的黄瓜味，好清香。
+
+Elta是自动发泡的洁面乳。什么意思呢？就是湿手按一泵，双手手掌相触，缓缓打圈，绵密的泡沫就慢慢发出来了。自动到只要抹在手掌心不用刻意打圈，肉眼都能够看见发泡。
+
+上脸非常舒服，入眼并不刺激。洗完脸真的感觉很干净，完全没有假滑的感觉，拿水冲掉泡泡之后脸就干干净净了，但不会有干的感觉！洗后我这个轻度干皮特地不涂东西，就晾了半天，确实没有紧绷的现象！我自己比较喜欢跟[luna洁面仪]一起搭配使用，起泡更快更方便，而且用起来因为泡沫比较多所以没有平时用其他洁面乳搭配luna感觉的刺激。
+
+洗面奶很温和的，虽然有一个致痘风险，但一般使用没问题，我自己也没有长痘现象。Elta MD的致痘风险是一款“乳化剂”——聚羟基硬脂酸，但这项的安全风险也是1，即致痘的风险很低很低，只存在较小的可能性。
+
+还有一个美中不足的地方就是按压的口处残存的洗面奶会变干，形成一个硬疙瘩。下次用，还要把硬疙瘩弄掉。
+
+        </text>
+        
+    </view>
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
+
+
+<view class="container"data-idx="2">
+
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+

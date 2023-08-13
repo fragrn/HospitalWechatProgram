@@ -1,0 +1,7 @@
+/* pages/register_record/register_record.wxss */
+.img{
+  display: flex;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+}

@@ -1,0 +1,20 @@
+/* pages/healthdocs/healthdocs.wxss */
+page
+{
+  background-color: #e2e2e2;
+}
+.title_1{
+  font-size: 35rpx;
+  text-align: left;
+  padding-left: 30rpx;
+  padding-bottom: 5rpx;
+  color: black;
+  font-weight: bold ;
+}
+.title_2{
+  font-size: 35rpx;
+  text-align: left;
+  padding-left: 20rpx;
+  color: black;
+  font-weight: bold ;
+}
