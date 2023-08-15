@@ -1,0 +1,40 @@
+<view class="content">
+  <view class="bg">
+    <form  bindsubmit="formSubmit">
+           <view class="search" style="width: 750rpx; height: 282rpx; display: block; box-sizing: border-box">
+       <button class='find' form-type="submit" style="width: 136rpx; height: 92rpx; position: relative; left: 286rpx; top: 92rpx; display: block; box-sizing: border-box">
+        查询
+        </button>
+         <input style="width: 596rpx; height: 92rpx; display: block; box-sizing: border-box" type="text" name="find" placeholder="帖子名称" form-type="submit"/>
+   
+    <button class='btn' bindtap="post"  style="position: relative; left: 0rpx; top: 792rpx">发帖</button>
+  
+    </view>
+     
+  </form>  
+  </view>
+  </view>  
+ 
+<view wx:for="{{list}}" wx:key="list">
+<navigator url="../post_detail/post_detail?id={{item._id}}" open-type="navigate" >
+  <view class="title"> {{item.title}}</view>
+  <view class="pic">
+  <image style="width:30%;height:69px;" src="{{item.pic_1}}"/>
+   
+  <view class="info">
+    <view class="desc">
+
+       <text>{{item.commentNumber}}条评论</text>
+       <text>{{item.time}}</text>
+       <text>楼主：{{item.writer}}</text>
+
+    <view class="opr">
+
+    </view>
+  </view>
+  </view>
+</view>
+<view class="hr"></view>
+</navigator>
+</view>
+

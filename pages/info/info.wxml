@@ -1,0 +1,79 @@
+<!--pages/info/info.wxml-->
+<view>
+  <swiper class="swiper-container"  indicator-dots  autoplay="true">
+   <swiper-item>
+    <view style="text-align: center;">
+     <image class="imgforswiper" src="/images/hospital_1.jpg" 
+    mode="aspectFill" />
+    </view>
+   </swiper-item>
+   <swiper-item>
+    <view style="text-align: center;">
+     <image class="imgforswiper" src="/images/hospital_2.jpg" 
+    mode="aspectFill" />
+    </view>
+   </swiper-item>
+   <swiper-item>
+    <view style="text-align: center;">
+     <image class="imgforswiper" src="/images/hospital_3.jpg" 
+    mode="aspectFill" />
+    </view>
+   </swiper-item>
+  </swiper>
+  
+  <view class='infoCont'>
+    <view class='infopanel'>
+      <view>
+        <view class='nameTitle'>{{name}}</view>
+       
+      </view>
+      <view class='j-list border-b'>
+        <text selectable="Ture" class='j-list-lf'>咨询电话：02162232385</text>
+        <view class='j-list-rt'><i-icon size='22' type="customerservice_fill" /></view>
+      </view>
+      <view class='j-list'>
+        <view class='j-list-lf'>医院地址：上海市普陀区中山北路3663号</view>  
+         
+         
+        <view class='j-list-rt'><i-icon size='22' type="coordinates_fill" /></view>
+      </view>
+    </view>
+    <i-panel>
+        <view class='panTitle'><view class='title'>简介</view>
+        <view class='titleMore' bindtap='goHospitalInfo'>查看详情<i-icon type="enter" /></view></view>
+        <view class='infoText'>{{intro}}</view>
+    </i-panel>
+    
+    <i-panel >
+    <view class="title">医院详情</view>
+        <view style="padding: 10rpx;">
+          <i-grid>
+              <i-grid-item data-type="1" bindtap="goBranchList">
+                  <i-grid-icon>
+                      <image src="../../images/referral.png" />
+                  </i-grid-icon>
+                  <i-grid-label>科室介绍</i-grid-label>
+              </i-grid-item>
+              <i-grid-item data-type="2" bindtap="goDoctor">
+                  <i-grid-icon>
+                      <image src="../../images/doctor.png" />
+                  </i-grid-icon>
+                  <i-grid-label>医生介绍</i-grid-label>
+              </i-grid-item>
+              <i-grid-item bindtap="goTower">
+                  <i-grid-icon>
+                      <image src="../../images/proposal.png" />
+                  </i-grid-icon>
+                  <i-grid-label>意见反馈</i-grid-label>
+              </i-grid-item>
+              <i-grid-item bindtap="goBranchLocation">
+                  <i-grid-icon>
+                      <image src="../../images/time.png" />
+                  </i-grid-icon>
+                  <i-grid-label>开放时间</i-grid-label>
+              </i-grid-item>
+          </i-grid>
+        </view>
+    </i-panel>
+  </view>
+</view>

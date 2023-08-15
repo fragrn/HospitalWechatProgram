@@ -1,0 +1,100 @@
+<!--answer.wxml-->
+<view class="container">
+    
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
+
+
+<view class="container"data-idx="2">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">家人们都用什么牌子的祛痘洗面奶啊？最近脸上的痘痘一直不消好烦人啊</text>
+    </view>
+    <view class="answerer-wrp">
+        <view class="bg-half"></view>
+        <view class="answerer flex-wrp">
+            <view class="avatar flex-item">
+                <image src="../../images/icon5.jpg"></image>
+            </view>
+            <view class="answerer-info flex-item">
+                <text class="answerer-name">优一</text>
+                <text class="answerer-des"></text> 
+            </view>
+            <view class="follow flex-item">
+                <text>十 关注</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-content">
+        <text>长期处于高压力状态会导致身体分泌大量的压力激素，如皮质醇和肾上腺素等，这些激素会影响身体的多个系统，包括肠胃系统。具体而言，长期的压力会导致肠胃运动失调，增加胃酸分泌，引起胃酸逆流，从而导致胃酸对食道和胃黏膜的刺激，引起不适和疼痛感。此外，压力还可能导致肠道细菌失衡，影响肠道的免疫功能，引起肠道炎症和其他消化系统问题。
+
+因此，如果你长期处于高压力状态，可能会导致肠胃不适和其他健康问题。建议采取有效的应对压力的方法，如运动、放松技巧、调整饮食和睡眠等，以减轻压力并缓解肠胃问题。如果肠胃问题严重影响到您的生活质量，建议咨询医生寻求更进一步的诊疗建议。
+        </text>
+        
+    </view>
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
