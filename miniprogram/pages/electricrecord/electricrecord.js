@@ -3,17 +3,19 @@ const db=wx.cloud.database()
 const app = getApp()
 var tempfile_Paths=[];
 var cloud_Paths=[];
-
+let globalOpenID; // 声明全局变量
 Page({
   data: {
     tempPaths: [],
     cloudPaths:[],
-    imageUrlList: [],   // 存储选中的照片
-    hideImages: false, // 初始状态下显示图片
-    hideButton: true   
+    fileList:[],        //存储cloud_fileId
+    imageUrlList: [],   // 存储temp_fileId
+    hideImages_toupload: false, // 初始状态下显示图片
+    hideImages_todownload: true   
   },
 
   uploadimage() {
+    
     for(let i=0;i<cloud_Paths.length;i++) {
       wx.cloud.uploadFile({
         cloudPath: cloud_Paths[i],
@@ -22,8 +24,18 @@ Page({
         success: (res) => {
           // 设置hideImages为true，隐藏显示的图片
           this.setData({
-            hideImages: true
+            hideImages_toupload: true
           });
+          db.collection('Cloud_File_Id').add({
+            // data 字段表示需新增的 JSON 数据
+            data: {
+             file_ID:cloud_Paths[i]
+            },
+            success: function(res) {
+              // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+              console.log(res)
+            }
+          })
           console.log('Upload success');
           console.log(res.fileID);
           wx.showToast({
@@ -73,34 +85,53 @@ Page({
 
   showimage: function () {
     const that = this;
+    console.log('111');
+    console.log("global\n" + globalOpenID);
 
-    // 假设你已经从数据库中获取了所有图片的文件 ID，存储在一个数组中
-    const fileList = [
-      "cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/Electronic_Medical_Records/MedicalRecords-1691912625753-0.jpg",
-      "cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/Electronic_Medical_Records/MedicalRecords-1691912625753-1.jpg",
-      "cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/Electronic_Medical_Records/MedicalRecords-1691912625753-2.png",
-      "cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/Electronic_Medical_Records/MedicalRecords-1691912625753-3.png"
-      // 添加更多文件 ID
-    ];
+    db.collection('Cloud_File_Id').where({
+      _openid: globalOpenID
+    }).get({
+      success: function (res) {
+        console.log(res.data);
+        const fileList = res.data.map(item => item.file_ID);
+        console.log("fileList\n" + fileList);
+        that.setData({
+          fileList: fileList // 将 fileList 更新为获取到的数据
+        }, () => {
+          console.log('Updated fileList\n' + that.data.fileList);
 
-    const imageUrlList = [];
+          // 假设你已经从数据库中获取了所有图片的文件 ID，存储在一个数组中
+          const imageUrlList = [];
 
-    fileList.forEach(fileID => {
-      wx.cloud.getTempFileURL({
-        fileList: [fileID],
-        success: res => {
-          const tempFileURL = res.fileList[0].tempFileURL;
-          imageUrlList.push(tempFileURL);
-          if (imageUrlList.length === fileList.length) {
-            that.setData({
-              tempPaths: imageUrlList
+          fileList.forEach(fileID => {
+            wx.cloud.getTempFileURL({
+              fileList: [fileID],
+              success: res => {
+                that.setData({
+                  hideImages_todownload: false
+                });
+                const tempFileURL = res.fileList[0].tempFileURL;
+                console.log("tempFileURL: "+tempFileURL)
+                imageUrlList.push(tempFileURL);
+                console.log("imageUrlList: "+imageUrlList)
+                if (imageUrlList.length === fileList.length) {
+                  that.setData({
+                    tempPaths: imageUrlList
+                  },()=>{
+                    console.log("tempPaths: "+that.data.tempPaths)
+                  });
+                }
+              },
+              fail: err => {
+                console.error(err);
+              }
             });
-          }
-        },
-        fail: err => {
-          console.error(err);
-        }
-      });
+          });
+        });
+      },
+      fail: function (err) {
+        console.error('获取 file_ID 列表失败', err);
+      }
     });
   },
 
@@ -193,6 +224,17 @@ Page({
   },
 
   onLoad: function () {
+    // 获取当前用户的 OpenID
+    wx.cloud.callFunction({
+      name: 'getOpenID',
+      success: res => {
+        globalOpenID = res.result.openid; // 存储为全局变量
+        console.log('当前用户的 OpenID:', globalOpenID);
+      },
+      fail: err => {
+        console.error('获取 OpenID 失败', err);
+      }
+    });
   },
 
   onReady: function () {

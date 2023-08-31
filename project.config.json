@@ -44,5 +44,6 @@
   },
   "appid": "wx460471a679a60fcd",
   "miniprogramRoot": "miniprogram/",
-  "srcMiniprogramRoot": "miniprogram/"
+  "srcMiniprogramRoot": "miniprogram/",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }
