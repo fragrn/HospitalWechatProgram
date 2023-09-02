@@ -10,8 +10,9 @@ Page({
     cloudPaths:[],
     fileList:[],        //存储cloud_fileId
     imageUrlList: [],   // 存储temp_fileId
-    hideImages_toupload: false, // 初始状态下显示图片
-    hideImages_todownload: true   
+    ImagesUpload: false, //上传图片成功后不再展示
+    ImagesDelete: true,//删除图片成功后不再展示
+    showImage: false   
   },
 
   uploadimage() {
@@ -24,7 +25,7 @@ Page({
         success: (res) => {
           // 设置hideImages为true，隐藏显示的图片
           this.setData({
-            hideImages_toupload: true
+            ImagesUpload: true
           });
           db.collection('Cloud_File_Id').add({
             // data 字段表示需新增的 JSON 数据
@@ -81,45 +82,42 @@ Page({
     });
   },
   
-  
 
   showimage: function () {
     const that = this;
     console.log('111');
     console.log("global\n" + globalOpenID);
-
+  
     db.collection('Cloud_File_Id').where({
       _openid: globalOpenID
     }).get({
       success: function (res) {
-        console.log(res.data);
+        //console.log(res.data);
         const fileList = res.data.map(item => item.file_ID);
-        console.log("fileList\n" + fileList);
+        //console.log("fileList\n" + fileList);
         that.setData({
           fileList: fileList // 将 fileList 更新为获取到的数据
         }, () => {
-          console.log('Updated fileList\n' + that.data.fileList);
-
+          // console.log('Updated fileList\n' + that.data.fileList);
+          // console.log("fileList[0]: "+that.data.fileList[0])
           // 假设你已经从数据库中获取了所有图片的文件 ID，存储在一个数组中
           const imageUrlList = [];
-
+      
           fileList.forEach(fileID => {
+            const fullFileID = "cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/" + fileID;//NeedToChangeWhenCloudEnvironmentChanges
             wx.cloud.getTempFileURL({
-              fileList: [fileID],
+              fileList: [fullFileID],
               success: res => {
                 that.setData({
-                  hideImages_todownload: false
+                  showImage: true
                 });
                 const tempFileURL = res.fileList[0].tempFileURL;
-                console.log("tempFileURL: "+tempFileURL)
                 imageUrlList.push(tempFileURL);
-                console.log("imageUrlList: "+imageUrlList)
                 if (imageUrlList.length === fileList.length) {
                   that.setData({
                     tempPaths: imageUrlList
-                  },()=>{
-                    console.log("tempPaths: "+that.data.tempPaths)
                   });
+                  // console.log("imageUrlList: "+imageUrlList)
                 }
               },
               fail: err => {
@@ -127,14 +125,16 @@ Page({
               }
             });
           });
-        });
-      },
+        }); // 这里要注意闭合的位置
+      }, // 这里要注意闭合的位置
       fail: function (err) {
         console.error('获取 file_ID 列表失败', err);
       }
-    });
+    }); // 这里要注意闭合的位置
   },
+  clickImage:function(e){
 
+  },
   // 处理图片操作：下载或删除
   handleImageAction: function (e) {
     const that = this;
@@ -158,15 +158,43 @@ Page({
 
   deleteImage: function (imageUrl) {
     const that = this;
-    
+    console.log("ImageUrltoDelete: "+imageUrl)
     // Extract the file ID from the imageUrl
-    const fileID = imageUrl.split('/').pop();
+    const fileid = 'Electronic_Medical_Records/'+imageUrl.split('/').pop();
+    const fileID='cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/'+fileid; //NeedToChangeWhenCloudEnvironmentChanges
+    console.log("fileID: " + fileID);
   
     // Delete the image from Cloud Storage
     wx.cloud.deleteFile({
       fileList: [fileID],
       success: function (res) {
         console.log('Image deleted from Cloud Storage:', res.fileList);
+  
+        // 查询数据库，查找对应的记录
+        db.collection('Cloud_File_Id').where({
+          file_ID: fileid // 使用要删除的 file_ID 进行查询
+        }).get({
+          success: function (result) {
+            if (result.data.length > 0) {
+              const docId = result.data[0]._id; // 获取记录的 _id
+  
+              // 根据 _id 删除记录
+              db.collection('Cloud_File_Id').doc(docId).remove({
+                success: function (res) {
+                  console.log('Record deleted from Cloud_File_Id:', res.data);
+                },
+                fail: function (err) {
+                  console.error('Failed to delete record from Cloud_File_Id:', err);
+                }
+              });
+            } else {
+              console.log('No record found with file_ID:', fileID);
+            }
+          },
+          fail: function (err) {
+            console.error('Query failed:', err);
+          }
+        });
   
         // Show a success toast
         wx.showToast({
@@ -191,6 +219,8 @@ Page({
       }
     });
   },
+  
+  
 
   downloadImage: function (imageUrl) {
     const that = this;
