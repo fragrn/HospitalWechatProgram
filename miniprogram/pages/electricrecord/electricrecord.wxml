@@ -8,14 +8,14 @@
 <view class="padding">
   <button class="button" style="width: 500rpx;" bindtap="showimage" size="default" type="primary">查看病历照片</button>
 </view>
-<view class="image-container"wx:if="{{ !ImagesUpload && !showImage}}">
+<view class="image-container"wx:if="{{ chooseImage }}">
   <view class="image-row">
-    <image class="image-item" wx:for="{{ tempPaths }}" wx:key="index" src="{{ item }}"></image>
+    <image class="image-item" wx:for="{{ tempPaths_upload }}" wx:key="index" src="{{ item }}"></image>
   </view>
 </view>
 <view class="image-container"wx:if="{{ showImage }}">
     <view class="image-row">
-      <image class="image-item" wx:for="{{ tempPaths }}" wx:key="index" src="{{ item }}" data-url="{{ item }}" bindtap="handleImageAction"></image>
+      <image class="image-item" wx:for="{{ tempPaths_show }}" wx:key="index" src="{{ item }}" data-url="{{ item }}" bindtap="handleImageAction"></image>
     </view>
 </view> 
 

@@ -6,17 +6,16 @@ var cloud_Paths=[];
 let globalOpenID; // 声明全局变量
 Page({
   data: {
-    tempPaths: [],
+    tempPaths_upload:[], //for"上传病历图片"
+    tempPaths_show: [],  //for"查看病历图片"
     cloudPaths:[],
     fileList:[],        //存储cloud_fileId
     imageUrlList: [],   // 存储temp_fileId
-    ImagesUpload: false, //上传图片成功后不再展示
-    ImagesDelete: true,//删除图片成功后不再展示
-    showImage: false   
+    showImage: false,   //互斥锁
+    chooseImage: false  //互斥锁
   },
 
   uploadimage() {
-    
     for(let i=0;i<cloud_Paths.length;i++) {
       wx.cloud.uploadFile({
         cloudPath: cloud_Paths[i],
@@ -25,7 +24,8 @@ Page({
         success: (res) => {
           // 设置hideImages为true，隐藏显示的图片
           this.setData({
-            ImagesUpload: true
+            chooseImage: false,
+            showImage: false
           });
           db.collection('Cloud_File_Id').add({
             // data 字段表示需新增的 JSON 数据
@@ -64,13 +64,17 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: (res) => {
-        this.setData({tempPaths:res.tempFilePaths});
+        this.setData({
+          tempPaths_upload:res.tempFilePaths,
+          chooseImage:true,
+          showImage: false
+        });
         tempfile_Paths = res.tempFilePaths;
         console.log("tempFilePaths: ", tempfile_Paths);
         const currentTime = new Date().getTime(); // 获取当前时间戳
         for (let i = 0; i < tempfile_Paths.length; i++) {
           const filePath = tempfile_Paths[i];
-          cloud_Paths.push('Electronic_Medical_Records/'+'MedicalRecords-' + currentTime + '-' + i + filePath.match(/\.[^.]+?$/)[0]);
+          cloud_Paths.push('Electronic_Medical_Records/'+'MedicalRecords-' + currentTime + '-' + i + filePath.match(/\.[^.]+?$/)[0]); //NeedToChangeWhenCloudEnvironmentChanges
           console.log('cloudPath: ', cloud_Paths[i]);   
         }
         this.setData({cloudPaths:res.cloud_Paths});
@@ -85,8 +89,8 @@ Page({
 
   showimage: function () {
     const that = this;
-    console.log('111');
-    console.log("global\n" + globalOpenID);
+    // console.log('111');
+    // console.log("global\n" + globalOpenID);
   
     db.collection('Cloud_File_Id').where({
       _openid: globalOpenID
@@ -109,13 +113,14 @@ Page({
               fileList: [fullFileID],
               success: res => {
                 that.setData({
+                  chooseImage: false,
                   showImage: true
                 });
                 const tempFileURL = res.fileList[0].tempFileURL;
                 imageUrlList.push(tempFileURL);
                 if (imageUrlList.length === fileList.length) {
                   that.setData({
-                    tempPaths: imageUrlList
+                    tempPaths_show: imageUrlList
                   });
                   // console.log("imageUrlList: "+imageUrlList)
                 }
@@ -125,16 +130,14 @@ Page({
               }
             });
           });
-        }); // 这里要注意闭合的位置
-      }, // 这里要注意闭合的位置
+        }); 
+      }, 
       fail: function (err) {
         console.error('获取 file_ID 列表失败', err);
       }
-    }); // 这里要注意闭合的位置
+    }); 
   },
-  clickImage:function(e){
 
-  },
   // 处理图片操作：下载或删除
   handleImageAction: function (e) {
     const that = this;
@@ -160,7 +163,7 @@ Page({
     const that = this;
     console.log("ImageUrltoDelete: "+imageUrl)
     // Extract the file ID from the imageUrl
-    const fileid = 'Electronic_Medical_Records/'+imageUrl.split('/').pop();
+    const fileid = 'Electronic_Medical_Records/'+imageUrl.split('/').pop(); //NeedToChangeWhenCloudEnvironmentChanges
     const fileID='cloud://huashi-1gkmmhqq303afcae.6875-huashi-1gkmmhqq303afcae-1316757497/'+fileid; //NeedToChangeWhenCloudEnvironmentChanges
     console.log("fileID: " + fileID);
   
