@@ -1,0 +1,20 @@
+<view class="v1" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
+ 
+
+ <view class="v2" >
+ <view class="dltext" >花狮校医</view>
+ <view class="id_number">
+     <input placeholder="请输入学号" type="number" bindinput="id_num"  />
+   </view>
+  
+   <view class=passwords">
+     <input placeholder="请设置密码" type="password" bindinput="password_1" />
+   </view>
+
+   <view class=passwords" style="position: absolute; left: 0rpx; top: 152rpx">
+     <input placeholder="请确认密码" type="password" bindinput="password_2" value='{{passwd_2}}' />
+   </view>
+
+   <button class="login_btn" type="warn" bindtap="regist" style="position: absolute; left: 64rpx; top: 120rpx; width: 360rpx; height: 90rpx; display: block; box-sizing: border-box">注册</button>
+</view>
+</view>

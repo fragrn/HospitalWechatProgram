@@ -1,0 +1,42 @@
+<!--pages/pay_for_reserve/pay_for_reserve.wxml-->
+<view class="container_pr">
+<image src="/images/personal.png" style="height: 105rpx;width: 100rpx;"></image>
+<text class="txt-left" style="left: -120rpx; position: relative;">学号:</text>
+<text class="txt-right">{{id}}</text>
+</view>
+
+<view class="container_pr">
+<text class="txt-left">就诊科室：</text>
+<text class="txt-right" >{{department}}</text>
+</view>
+
+<view class="container_pr">
+<text class="txt-left">医生姓名：</text>
+<text class="txt-right">{{doctor}}</text>
+
+</view>
+
+<view class="container_pr">
+<text class="txt-left" >就诊日期：</text>
+<text class="txt-right" style="color: red;">{{date}}</text>
+
+</view>
+
+<view class="container_pr">
+<text class="txt-left" >就诊时段: </text>
+<text class="txt-right" style="color: red;">{{time}}</text>
+
+</view>
+
+<view class="container_pr">
+<text class="txt-left">挂号费:</text>
+
+</view>
+
+<view class="container_pr" style="margin-top: 80rpx;border-top: 3rpx solid gray;">
+<text class="txt-left">微信支付</text>
+</view>
+
+<button type="primary" style="margin-top: 30rpx;width: 500rpx;">预约并付款</button>
+
+

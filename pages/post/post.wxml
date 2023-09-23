@@ -1,0 +1,22 @@
+<text >\n</text>
+<form bindsubmit="formSubmit" id='1' bindreset="formReset">    
+
+  <i-input class="title" name="title" placeholder="输入标题" type="textarea" auto-focus="true"  title="主题" />
+    <i-input class="content" name="content" placeholder="编辑正文" type="textarea" title="内容"  auto-focus="true"/>
+
+      <view class="big-logos">
+        <view class='big-logos_img' style="width: 750rpx; height: 253rpx; display: block; box-sizing: border-box">
+           <image bindtap="upimg" src='/images/upload.png' name="files" mode="aspectFill"  style="width: 250rpx; height: 244rpx; display: block; box-sizing: border-box"></image> 
+      
+        </view>
+        <block wx:for="{{img_arr}}" wx:key="{{index}}"> 
+            <view class='logoinfo'  style="width: 750rpx; height: 253rpx; display: block; box-sizing: border-box">    
+              <image src='{{item}}' mode="aspectFill"  style="width: 250rpx; height: 244rpx; display: block; box-sizing: border-box"></image>    
+            </view>  
+        </block>    
+      </view>    
+    <text >\n</text>
+
+  <text >\n</text>
+      <button class='btn' formType="submit">发布</button>    
+</form>  

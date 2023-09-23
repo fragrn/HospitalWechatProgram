@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "i-calendar":"/iview/calendar/calendar"
+  }
+}

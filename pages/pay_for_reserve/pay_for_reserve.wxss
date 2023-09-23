@@ -1,0 +1,33 @@
+/* pages/pay_for_reserve/pay_for_reserve.wxss */
+page{
+  background-color: #e2e2e2;
+}
+
+.container_pr
+{
+  background-color: rgb(255, 255, 255);
+  height: 105rpx;
+  width: 750rpx;
+  border-bottom: 3rpx solid gray;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+ align-items: center;
+ text-align: center;
+
+}
+
+.container_pr .txt-right
+{
+  font-weight: bolder;
+  margin-right: 60rpx;
+}
+
+
+.container_pr .txt-left
+{
+  font-weight: bolder;
+  position: relative; 
+  left: 30rpx;
+   
+}

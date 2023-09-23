@@ -28,7 +28,7 @@ App({
           },
           method: 'GET',
           success: function (res) {
-            console.log("openId获取成", res.data.openid)
+            console.log("openId获取成功", res.data.openid)
             that.globalData.openid = res.data.openid;
           }
         })
@@ -42,20 +42,66 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+              that.globalData.userInfo = res.userInfo
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
+
+              var avatarUrl = that.globalData.userInfo.avatarUrl
+              console.log(avatarUrl)
+              wx.downloadFile({
+                url: avatarUrl,
+                success (res) {
+                 if (res.statusCode === 200) {
+                wx.hideLoading()
+                let tempFilePath = res.tempFilePath
+                wx.saveFile({
+                  tempFilePath,
+                  success (res) {
+                         // 可以进行到这里
+                      console.log(res);
+                     const savedFilePath = res.savedFilePath
+                      wx.cloud.uploadFile({
+                        cloudPath:"icon/"+that.globalData.openid+".png",
+                        filePath: savedFilePath,
+                        success :res =>
+                        {
+                          wx.cloud.getTempFileURL({
+                            fileList:[res.fileID],
+                            success(res)
+                            {
+                              console.log(res.fileList[0].tempFileURL)
+                              that.globalData.userInfo.avatarUrl = res.fileList[0].tempFileURL
+
+                              console.log("用户信息",that.globalData.userInfo)
+                              
+                            }
+                          })
+                        }
+                      })
+
+                  },
+                  fail (err) {
+                   console.log(err);
+                 
+                  }
+                 })
+                }
+               }
+              })  
             }
           })
         }
       }
     })
   },
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openid: "",
+    student_id:"",
   },
   //添加就诊卡
   addVisitCard() {

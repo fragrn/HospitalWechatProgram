@@ -1,0 +1,36 @@
+<!-- wxml -->
+<view class="container">
+<!-- 商品列表 -->
+	<view class="cate">
+		<!-- 左侧导航 -->
+		<scroll-view scroll-y class="nav-left" style="width: 258rpx; height: 1026rpx; display: block; box-sizing: border-box">
+			<view 
+				wx:for="{{List}}"
+				wx:key="this"
+				class="nav-left-item {{currentIndex_L == index ? 'L-item-active' : ''}}" 
+				bindtap="bindleLeftItemTap" 
+				data-index="{{index}}" >
+				<text class="nav-left-item-txt {{currentIndex_L == index ? 'L-i-txt-active' : ''}}">{{item.LeftName}}</text>
+			</view>
+		</scroll-view>
+		<!-- 右侧导航 -->
+		<scroll-view scroll-y scroll-top="{{scrollTop}}" class="nav-right" style="width: 412rpx; height: 1026rpx; display: block; box-sizing: border-box">
+			<view 
+				wx:for="{{List[currentIndex_L].RightList}}"
+				wx:key="this"
+				class="nav-right-item"
+				bindtap="bindleRightItemTap" 
+				data-index="{{index}}">
+				<text class="nav-right-item-txt {{currentIndex_R == index ? 'R-i-txt-active' : ''}}">{{item.RightName}}</text>
+				<view class="{{currentIndex_R == index ? 'image-select' : ''}}">
+					<image wx:if="{{currentIndex_R == index}}" class="item-select" src="../icon/Hook_icon.png"/>
+ 				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="pd32 btn-find">
+		<view bindtap="toDetail">
+			<view class="btn-big" style="width: 286rpx; height: 88rpx; display: flex; box-sizing: border-box">查看详情</view>
+		</view>
+	</view>
+</view>

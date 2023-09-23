@@ -1,0 +1,23 @@
+<!--pages/doctors.wxml-->
+<text>pages/医生介绍</text>
+<view class="showbox">
+  <view class="doctorimagebox">
+    <image class="doctorimage" src="https://7072-project-4gz9hqn3031f5a54-1316546914.tcb.qcloud.la/doctors/doctor_1.jpg?sign=e7fd1e401ae8f8f1bf9cceb896ba7f3e&t=1693876852" mode="aspectFit"/>
+  </view>
+  <view class="introduction">
+    <text >docor A</text>
+  </view>
+</view>
+<view class="panel-p5"></view>
+<view class="showbox">
+  <view class="doctorimagebox">
+    <image  class="doctorimage"src="https://7072-project-4gz9hqn3031f5a54-1316546914.tcb.qcloud.la/doctors/doctor_2.jpg?sign=07f8606393b1272f7d1835e39776facf&t=1693876868" mode="aspectFit"/>
+  </view>
+  <view class="introduction">
+    <text >docor B</text>
+  </view>
+</view>
+
+
+
+

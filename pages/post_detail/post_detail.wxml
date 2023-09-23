@@ -1,0 +1,79 @@
+<view class="content" wx:for="{{list}}"  wx:key="{{index}}" >
+  <view class="title">{{item.title}}</view>
+  <view class="desc">
+    <view class="publish">
+      <view>
+  
+<image src="{{item.writer_info.avatarUrl}}"style="width:36px;height:36px;"></image>
+
+
+</view>
+
+      <view class="company">
+        
+        <view>{{item.writer_info.nickName}}</view>
+
+        <view class="attr">
+          
+         
+           <text class="time">{{item.time}}</text>
+        </view>
+      
+     
+      </view>
+    </view>
+  </view>
+  
+  <view class="article">
+
+    {{item.content}}
+  </view>
+  <view class="img" >
+    <image style="height: 322rpx; width: 640rpx; display: block; box-sizing: border-box" mode="aspectFit" src="{{item.pic_1}}">
+    </image>
+   
+  </view>
+   </view>
+
+   <view class="hr"></view>
+
+    <view class="answer-feed" wx:for="{{listPL}}"  wx:key="{{index}}">
+ <view style="height:10rpx; background-color : #0094ff ;overflow: hidden;display: inline-block;text-align: justify;text-align-last: justify; "></view>
+        <view  bindtap="bindItemTap" class="feed-item">
+         
+                    <image class="icon"  src="{{item.writer_info.avatarUrl}}"></image>
+                  
+                    <text>{{item.writer_info.nickName}}</text>
+                  
+            <view class="feed-content">
+                <view class="answer-body">
+                
+                    <view>
+                  <text class="answer-txt">{{item.content}}</text>
+                    </view>
+                    <view class="answer-actions">
+                        
+                        <view class="time">
+                        <a>{{item.time}}</a>
+                        </view>
+
+                    </view>
+
+
+                </view>
+            </view>
+
+            <view class="hr"></view>
+        </view>
+</view>
+<text >\n</text>
+<text >\n</text>
+  <form bindsubmit="formSubmit">
+  <view class="comment">
+    <view class="write" style="width: 578rpx; height: 64rpx; display: block; box-sizing: border-box"><input style="width: 505rpx; height: 72rpx; display: block; box-sizing: border-box" type="textarea" value="{{CommentValue}}" name="pinglun" placeholder="写评论..."/></view>
+    <view class="opr">
+       <button class="sumbit" form-type="submit" style="position: relative; left: -74rpx; top: 0rpx; width: 172rpx; height: 72rpx; display: block; box-sizing: border-box">评论</button>
+    </view>
+  </view>
+ </form> 
+ <i-toast id="toast" />

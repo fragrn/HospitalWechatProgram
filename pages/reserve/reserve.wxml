@@ -1,0 +1,31 @@
+<!--pages/reserve/reserve.wxml-->
+
+<view class="container-res" >
+<text class="title">科室：{{department}}</text>
+<text class="btn-txt">只看有号</text>
+<switch></switch>
+<button></button>
+</view>
+
+<view class="calendar" >
+<i-calendar  style="position: relative; left: 0rpx; top: 0rpx" bind:selectDate='submitDate'></i-calendar>
+</view>
+
+<view class="choice">
+<navigator class="nav" style="width: 748rpx; height: 202rpx; display: block; box-sizing: border-box" url="/pages/pay_for_reserve/pay_for_reserve?date={{date}}&time={{time_1}}&department={{department}}">
+<image class="img" src="/images/doctor-icon.png" style="width: 205rpx; height: 196rpx; display: inline-block; box-sizing: border-box; position: relative; left: 0rpx; top: -18rpx"></image>
+<view class="time" style="width: 268rpx; height: 66rpx; display: block; box-sizing: border-box; position: relative; left: 232rpx; top: -136rpx">
+<text style="position: relative; left: 0rpx; top: -42rpx; width: 80rpx; height: 40rpx;font-weight: 500;">时间：{{time_1}}</text>
+</view>
+
+<view class="doctor" style="position: relative; left: 234rpx; top: -134rpx; width: 266rpx; height: 66rpx; display: block; box-sizing: border-box">
+  <text style="position: relative; left: 0rpx; top: 0rpx;font-weight: bolder;">医生：</text>
+</view>
+
+<view class="ac" style="position: relative; left: 614rpx; top: -310rpx; width: 106rpx; height: 42rpx; box-sizing: border-box;">
+<text class="ava">有号</text>
+</view>
+</navigator>
+
+</view>
+

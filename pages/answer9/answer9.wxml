@@ -1,0 +1,102 @@
+<!--answer.wxml-->
+<view class="container">
+    
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+
+
+
+<view class="container"data-idx="2">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">友友们一天中每顿饭大概摄入多少热量才比较能保持一个健康的身材呢？</text>
+    </view>
+    <view class="answerer-wrp">
+        <view class="bg-half"></view>
+        <view class="answerer flex-wrp">
+            <view class="avatar flex-item">
+                <image src="../../images/icon9.jpeg"></image>
+            </view>
+            <view class="answerer-info flex-item">
+                <text class="answerer-name">周旋</text>
+                <text class="answerer-des"></text> 
+            </view>
+            <view class="follow flex-item">
+                <text>十 关注</text>
+            </view>
+        </view>
+    </view>
+    <view class="answer-content">
+        <text>每个人的身体状况和活动水平不同，所需的热量摄入也会有所不同。一般来说，一个健康的成年人每天需要摄入大约2000-2500卡路里的热量，以维持身体正常的代谢和活动。
+
+根据个人饮食习惯和生活习惯的不同，每餐应该摄入多少热量也会有所差异。通常来说，建议每餐摄入约400-600卡路里的热量为宜，三餐加上适量的小食可以保证足够的营养和能量供应。
+
+此外，建议注意饮食平衡，合理搭配蛋白质、碳水化合物、脂肪、膳食纤维等营养素，选择新鲜、健康、低热量的食材，避免摄入过多的油脂、糖分和盐分等不健康的成分，以维持健康的身材。如果需要更具体的饮食建议，建议咨询营养师或医生的意见。
+        </text>
+        
+    </view>
+
+    <view class="answer-footer flex-wrp">
+        <view class="good flex-item">
+            <view class="good-bad">
+                <image src="../../images/good-bad.png"></image>
+            </view>
+            <view class="good-num">2.1k</view>
+        </view>
+        <view class="operation-wrp flex-item">
+            <view class="operation flex-wrp flex-tab">
+                <view class="operation-btn flex-item">
+                    <image src="../../images/flag.png"></image>
+                    <text>没有帮助</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/heart2.png"></image>
+                    <text>感谢</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/star2.png"></image>
+                    <text>收藏</text>
+                </view>
+                <view class="operation-btn flex-item">
+                    <image src="../../images/comment.png"></image>
+                    <text>302</text>
+                </view>
+
+            </view>
+        </view>
+
+
+
+    </view>
+</view>
+

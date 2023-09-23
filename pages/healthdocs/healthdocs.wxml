@@ -1,0 +1,25 @@
+<!--pages/healthdocs/healthdocs.wxml-->
+<view class='panel-m20'>
+  <view class='userInfo'>
+    <i-cell-group>
+      <i-cell class="title_1">基本信息
+        <i-input class="" title="血型:"  />
+        <i-input  title="身高:"  />
+        <i-input  title="体重:"  />
+        <i-input  title="腰围:"  />
+        <i-input  title="臀围:"  />
+        <i-input  title="收缩压:"  />
+        <i-input  title="舒张压:"  />
+        <i-input  title="药物过敏史:"  />
+      </i-cell>
+      <i-cell class='title_1'>过往病史  
+        <i-input value="{{ name }}" title="遗传病史:" />
+        <i-input value="{{ name }}" title="重大基础疾病:"  />
+        <i-input value="{{ name }}" title="慢性病:"  />
+        </i-cell>
+      <i-cell class='title_1'>住院记录
+        <i-input placeholder="请输入主要住院记录"/>
+      </i-cell>
+    </i-cell-group>  
+  </view>
+</view>

@@ -1,0 +1,73 @@
+/* pages/reserve/reserve.wxss */
+
+.container-res
+{
+  border-bottom: 3rpx solid gray;
+  
+  height: 100rpx;
+  width: 750rpx;
+  align-items: center;
+  display: flex;
+
+ 
+}
+
+.container-res .title
+{
+  width: 50%;
+  margin-left: 60rpx;
+  font-size: medium;
+  font-weight: bolder;
+  border-right: 3rpx solid gray;
+}
+
+
+.container-res .btn-txt
+{
+  width: 30%;
+  margin-left:130rpx;
+  font-size: medium;
+}
+
+.calendar
+{
+  border-bottom: 3rpx solid gray;
+  height: 300rpx;
+  width: 750rpx;
+}
+
+.choice
+{
+  margin-top: 20rpx;
+  height: 200rpx;
+  width: 750rpx;
+  border-bottom: 3rpx solid black;
+  display: flex;
+
+}
+
+
+.choice .img
+{
+  height: 150rpx;
+  width: 150rpx;
+
+}
+
+.choice .doctor
+{
+ 
+}
+.ac
+{
+  background-color: rgb(0,240,101);
+  display: flex;
+  justify-content: center;
+
+}
+.ac .ava
+{
+  color: rgb(244, 245, 244);
+  font-size: medium;
+  font-weight: bolder;
+}

@@ -1,0 +1,115 @@
+/* pages/register/register.wxss */
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.v1{
+  display: block;
+  position:absolute;
+  width: 100%;
+  background-color: rgb(250, 248, 248);
+}
+/* 白色区域 */
+.v1 .v2{
+  position: relative;
+  margin-top: 150rpx;
+  left: 100rpx; 
+  width: 545rpx;
+  height: 600rpx;
+  background-color: rgb(250, 248, 248);
+  border-radius: 50rpx;
+}
+/* 白色区域内的登录文本 */
+.v1 .v2 .dltext{
+  margin-top: 50rpx;
+  position: absolute;
+  margin-left:50rpx;
+  width: 300rpx;
+  height: 100rpx;
+  font-size: 50rpx;
+  font-family: Helvetica;
+  color: #000000;
+  line-height: 100rpx;
+  letter-spacing: 2rpx;
+}
+/* 手机图片+输入框+下划线的父容器view */
+.v1 .v2 .id_number{
+  margin-top: 200rpx;
+  margin-left: 25rpx;
+  position: absolute;
+  display: flex;
+  width:480rpx ;
+  height: 90rpx ;
+  background-color: white;
+  border: solid black 5rpx;
+  
+}
+/* 手机图标 */
+
+/* 手机号输入框 */
+.v1 .v2 .id_number input{
+  width: 400rpx;
+  font-size: 30rpx ;
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+ 
+}
+/* 密码图标+输入框+小眼睛图标+下划线父容器view */
+.v1 .v2 .passwords{
+  margin-top: 350rpx;
+  margin-left: 25rpx;
+  position: absolute;
+  display: flex;
+  width:480rpx ;
+  height: 90rpx ;
+  background-color: white;
+  border: solid black 5rpx;
+
+}
+/* 密码图标 */
+
+/* 眼睛 图标*/
+
+/* 密码输入框 */
+.v1 .v2 .passwords input{
+  width: 400rpx;
+  font-size: 30rpx ;
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+}
+/* 登录按钮容器view */
+.v1 .v2 .login_btn{
+  width: 480rpx;
+  height: 80rpx;
+  position: absolute;
+  margin-top:515rpx;
+  margin-left:25rpx;
+  
+}
+/* 登录按钮 */
+.v1 .v2 .login_btn button{
+  padding: 0rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rpx;
+}

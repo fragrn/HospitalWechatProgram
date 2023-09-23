@@ -1,0 +1,25 @@
+<!--pages/find/find.wxml-->
+<view wx:for="{{list}}" wx:key="list">
+  <navigator url="../post_detail/post_detail?id={{item._id}}" open-type="navigate" >
+  <view class="title">{{item.title}}</view>
+  <view class="pic">
+  <image style="width:30%;height:69px;" src="{{item.pic_1}}"/>
+
+  <view class="info">
+    <view class="desc">
+
+       <text>{{viewsNumber}}条评论</text>
+       <text>{{item.time}}</text>
+       <text>楼主：{{item.writer}}</text>
+
+    <view class="opr">
+
+    </view>
+  </view>
+  </view>
+</view>
+<view class="hr"></view>
+</navigator>
+</view>
+
+

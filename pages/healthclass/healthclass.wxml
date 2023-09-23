@@ -1,0 +1,43 @@
+<view class="content">
+  <view class="bg">
+    <view class="name">健康论坛</view>
+    <form  bindsubmit="formSubmit">
+           <view class="search" style="width: 424rpx; height: 60rpx; display: flex; box-sizing: border-box">
+       <button class='find' form-type="submit" style="width: 50px; height: 30x; position: relative; left: -2rpx; top: 0rpx">
+        查询
+        </button>
+         <input style="width: 292rpx; height: 60rpx; display: block; box-sizing: border-box" value="{{keywords}}"  type="text" name="find" placeholder="帖子名称"  form-type="submit"/>
+   
+    <button class='btn' bindtap="post"  style="position: fixed; left: 258rpx; top: 986rpx; width: 116rpx; height: 76rpx; display: flex; box-sizing: border-box;">发帖</button>
+  
+    </view>
+     
+  </form>  
+  </view>
+
+
+ 
+<view wx:for="{{list}}" wx:key="list">
+<navigator url="../post_detail/post_detail?id={{item._id}}" open-type="navigate" >
+<view class="post">
+  <view class="title"> {{item.title}}</view>
+  <view class="pic">
+  <image style="width:30%;height:69px;" src="{{item.pic_1}}"/>
+   
+  <view class="info">
+    <view class="desc">
+
+       <text>{{item.commentNumber}}条评论</text>
+       <text>{{item.time}}</text>
+       <text>楼主：{{item.writer_info.nickName}}</text>
+
+      </view>
+  </view>
+  </view>
+</view>
+<view class="hr"></view>
+</navigator>
+</view>
+
+</view>  
+

@@ -50,8 +50,11 @@
     "pages/dayLog/dayLog",
     "pages/doctors/doctors",
     "pages/post/post",
-    "pages/post_detail/post_detail"
-    
+    "pages/post_detail/post_detail",
+    "pages/find/find",
+    "pages/mypost/mypost",
+    "pages/register/register",
+    "pages/pay_for_reserve/pay_for_reserve"
   ],
   "tabBar": {
     "color": "#000000",
@@ -98,6 +101,8 @@
     "navigationBarTextStyle": "black"
   },
   "component": true,
+  "cloud": true,
+  "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "j-footbar": "pages/common/footbar/footbar",
     "j-searchComp": "pages/component/searchComp/searchComp",
@@ -125,6 +130,7 @@
     "i-modal": "iview/modal/index",
     "i-action-sheet": "iview/action-sheet/index",
     "i-radio-group": "iview/radio-group/index",
-    "i-radio": "iview/radio/index"
+    "i-radio": "iview/radio/index",
+    "i-calendar": "iview/calendar/calendar"
   }
 }
